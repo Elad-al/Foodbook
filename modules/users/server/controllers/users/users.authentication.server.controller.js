@@ -63,7 +63,7 @@ exports.signin = function (req, res, next) {
       // Remove sensitive data before login
       user.password = undefined;
       user.salt = undefined;
-
+      //user.follows = ['users singin', 'we', 'can'];
       req.login(user, function (err) {
         if (err) {
           res.status(400).send(err);

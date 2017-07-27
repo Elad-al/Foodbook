@@ -35,3 +35,26 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+
+
+
+
+.welcome-foodbook-logo {
+    background-image: url("modules/core/client/img/brand/logo.png");
+    background-size: cover; /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.welcome_foodbook {
+    background-image: url("https://image.freepik.com/free-photo/vegetables-set-to-the-left-of-a-black-slate_1220-685.jpg");
+    background-size: cover; /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 20px;
+}
+
+    .welcome_foodbook img {
+        opacity: 0.7;
+        border-style: outset;
+    }

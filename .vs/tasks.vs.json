@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-favicon",
+      "appliesTo": "modules/core/client/img/brand/favicon.ico",
+      "type": "command"
+    }
+  ]
+}

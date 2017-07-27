@@ -1,0 +1,52 @@
+<section>
+  <div class="search-box-continer">
+    <input name="searchKeyWord" type="text" ng-model="searchKeyWord" id="searchKeyWord" class="form-control search-input-item" placeholder="sherch" required >
+    <button class="btn btn-default" ng-click="search()">sherch</button>
+    <button class="btn btn-default" ng-show="resultMode" ng-click="clearSearch()">clear search results</button>
+  </div>
+  <div>
+    <div ng-show="resultMode">
+      <h1>Results </h1>
+      <a ng-repeat="follwe in searchResults"
+         ui-sref="follwes.view({ follweId: follwe._id })"
+         class="list-group-item Follwes-list-group-item">
+        <small class="list-group-item-text">
+          update on
+          <span ng-bind="follwe.created | date:'mediumDate'"></span>
+          by
+          <span ng-if="follwe" ng-bind="follwe.firstName"></span>
+          <span ng-if="!follwe">Deleted User</span>
+        </small>
+        <img ng-src="{{follwe.profileImageURL}}" alt="{{follow.username}}" class="pull-left Follwe-profile-image" />
+        <h4 class="list-group-item-heading" ng-bind="follwe.firstName"></h4>
+        <img ng-src="/modules/follwes/client/img/user-group-icon.png">
+      </a>
+    </div>
+  </div>
+
+
+  <div class="page-header">
+    <h1>Foodbook Users</h1>
+  </div>
+  <div class="list-group" ng-show="!resultMode" ng-controller="FollwesListController">
+    
+    <a ng-repeat="follwe in vm.follwes"
+       ui-sref="follwes.view({ follweId: follwe._id })"
+       class="list-group-item Follwes-list-group-item">
+      <small class="list-group-item-text">
+        update on
+        <span ng-bind="follwe.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="follwe" ng-bind="follwe.firstName"></span>
+        <span ng-if="!follwe">Deleted User</span>
+      </small>
+      <img ng-src="{{follwe.profileImageURL}}" alt="{{follow.username}}" class="pull-left Follwe-profile-image" />
+      <h4 class="list-group-item-heading" ng-bind="follwe.firstName"></h4>
+      
+    </a>
+  </div>
+    
+  <div class="alert alert-warning text-center" ng-if="vm.follwes.$resolved && !vm.follwes.length">
+    No Follwes yet, why don't you <a ui-sref="follwes.create">create one</a>?
+  </div>
+</section>

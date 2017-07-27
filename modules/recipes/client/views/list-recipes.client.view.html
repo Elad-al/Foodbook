@@ -1,0 +1,48 @@
+<section>
+  <div class="search-box-continer">
+    <input name="searchKeyWord" type="text" ng-model="searchKeyWord" id="searchKeyWord" class="form-control search-input-item" placeholder="sherch" required>
+    <button class="btn btn-default" ng-click="search()">sherch</button>
+    <button class="btn btn-default" ng-show="resultMode" ng-click="clearSearch()">clear search results</button>
+  </div>
+  <div class="page-header">
+    <h1>Recipes</h1>
+  </div>
+  <div>
+    <div ng-show="resultMode">
+      <h1>Results </h1>
+      <a ng-repeat="recipe in searchResults" ui-sref="recipes.view({ recipeId: recipe._id })" class="list-group-item">
+        <small class="list-group-item-text">
+          Posted on
+          <span ng-bind="recipe.created | date:'mediumDate'"></span>
+          by
+          <span ng-if="recipe.user" ng-bind="recipe.user.username"></span>
+          <span ng-if="!recipe.user">Deleted User</span>
+        </small>
+        <hr>
+        <h4 class="list-group-item-heading" ng-bind="recipe.name"></h4>
+        <p>{{recipe.description | limitTo:200 }}</p>
+      </a>
+    </div>
+
+  </div>
+  <hr />
+  <div class="list-group" ng-show="!resultMode">
+    <a ng-repeat="recipe in vm.recipes"
+       ui-sref="recipes.view({ recipeId: recipe._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="recipe.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="recipe.user" ng-bind="recipe.user.username"></span>
+        <span ng-if="!recipe.user">Deleted User</span>
+      </small>
+      <hr>
+      <h4 class="list-group-item-heading" ng-bind="recipe.name"></h4>
+      <p>{{recipe.description | limitTo:200 }}</p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.recipes.$resolved && !vm.recipes.length">
+    No Recipes yet, why don't you <a ui-sref="recipes.create">create one</a>?
+  </div>
+</section>

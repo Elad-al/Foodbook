@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\modules",
+    "\\modules\\articles",
+    "\\modules\\articles\\client",
+    "\\modules\\articles\\client\\controllers",
+    "\\modules\\articles\\server",
+    "\\modules\\articles\\server\\controllers",
+    "\\modules\\core",
+    "\\modules\\core\\client",
+    "\\modules\\core\\client\\controllers",
+    "\\modules\\core\\client\\css",
+    "\\modules\\core\\client\\views"
+  ],
+  "SelectedNode": "\\modules\\core\\client\\controllers\\home.client.controller.js",
+  "PreviewInSolutionExplorer": false
+}

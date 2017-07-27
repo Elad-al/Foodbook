@@ -1,8 +1,31 @@
 <section ng-controller="ArticlesController" ng-init="find()">
+  <div class="search-box-continer">
+    <input name="searchKeyWord" type="text" ng-model="vm.searchKeyWord" id="searchKeyWord" class="form-control search-input-item" placeholder="sherch" required>
+    <button class="btn btn-default" ng-click="search()">sherch</button>
+    <button class="btn btn-default" ng-show="resultMode" ng-click="clearSearch()">clear search results</button>
+  </div>
   <div class="page-header">
     <h1>Articles</h1>
   </div>
-  <div class="list-group">
+  <div>
+    <div ng-show="resultMode">
+      <h1 >Results </h1>
+      <a ng-repeat="article in searchResults" ui-sref="articles.view({articleId: article._id})" class="list-group-item">
+        <small class="list-group-item-text">
+          Posted on
+          <span ng-bind="article.created | date:'mediumDate'"></span>
+          by
+          <span ng-bind="article.user.displayName"></span>
+        </small>
+        <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
+        <p class="list-group-item-text" ng-bind="article.content"></p>
+      </a>
+    </div>
+
+    
+  </div>
+  <hr />
+  <div class="list-group" ng-show ="!resultMode">
     <a ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})" class="list-group-item">
       <small class="list-group-item-text">
         Posted on

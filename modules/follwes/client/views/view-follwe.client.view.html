@@ -1,0 +1,34 @@
+
+<section>
+
+  <div class="page-header">
+    <h1 ng-bind="vm.follwe.username"></h1>
+  </div>
+  <img ng-src="{{vm.follwe.profileImageURL}}" alt="{{vm.follwe.username}}" class="pull-left view-profile-image" />
+
+  <div class="pull-right"
+       ng-show="vm.follwe.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="follows.edit({ followId: vm.follow._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Joind on
+      <span ng-bind="vm.follwe.created | date:'mediumDate'"></span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.follwe.displayName"></p>
+  <div class="pull-right" >
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <img ng-show="vm.isFollwe" class="pull-right user-follweing-status-image" alt="Follwing" ng-src="/modules/follwes/client/img/user-group-icon.png">
+      <img ng-show="!vm.isFollwe" class="pull-right user-follweing-status-image" alt="Not Follwing" ng-src="/modules/follwes/client/img/search-add-icon.png">
+
+    </a>
+  </div>
+</section>
+

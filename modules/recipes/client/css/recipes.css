@@ -1,0 +1,23 @@
+.chat-message {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.chat-message:not(:first-child) {
+  border-top: 1px solid #e7e7e7;
+}
+.chat-message-details {
+  margin-left: 10px;
+}
+.profile-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.list-group-item {
+    margin: 20px;
+}
+
+.search-input-item {
+    width: 250px;
+}

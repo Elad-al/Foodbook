@@ -22,6 +22,8 @@ exports.create = function (req, res) {
       });
     } else {
       res.json(article);
+      var io = req.app.get('socketio');
+      io.emit('article.created', article); // emit an event for all connected users
     }
   });
 };
@@ -66,6 +68,8 @@ exports.delete = function (req, res) {
       });
     } else {
       res.json(article);
+      var io = req.app.get('socketio');
+      io.emit('article.delete', req.article); // emit an event for all connected users
     }
   });
 };

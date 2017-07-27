@@ -104,5 +104,6 @@ module.exports = function (app, db) {
     });
   });
 
+  app.set('socketio', io);
   return server;
 };

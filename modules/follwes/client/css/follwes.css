@@ -1,0 +1,44 @@
+.chat-message {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.chat-message:not(:first-child) {
+  border-top: 1px solid #e7e7e7;
+}
+.chat-message-details {
+  margin-left: 10px;
+}
+.Follwe-profile-image {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin: 10px;
+   
+}
+
+.user-follweing-status-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 10%;
+    margin: 10px;
+}
+
+.Follwes-list-group-item {
+    width: 450px;
+    height: 100px;
+}
+
+.search-box-continer {
+    margin-top: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.view-profile-image {
+    height: 170px;
+    width: 170px;
+    border-radius: 10%;
+    margin: 10px;
+}
